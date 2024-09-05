@@ -1,0 +1,33 @@
+
+li {
+    z-index: 1;
+    position: relative;
+    background: #FFFFFF;
+    padding: 0 20px;
+    color: #666;
+}
+
+li.active {
+    color: #5380F7;
+}
+
+li:first-child {
+    border-radius: 4px 4px 0 0;
+}
+
+li:last-child {
+    border-radius: 0 0 4px 4px;
+}
+
+li:last-child a {
+    border-bottom: 0;
+}
+
+a {
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 16px 0;
+    color: inherit;
+    font-size: 14px;
+    text-decoration: none;
+}

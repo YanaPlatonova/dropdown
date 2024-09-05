@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
+import Dropdown from './components/dropdown/Dropdown';
 
 function App() {
+
+  const items = [
+    { value:'profile', label:'Profile Information'},
+    { value:'password', label:'Change Password'},
+    { value:'pro', label:'Become PRO'},
+    { value:'help', label:'Help'},
+    { value:'logout', label:'Log Out'}];
+
+  const [selectedValue,setValue] = useState(null);
+
+  const onChange = (select) => {
+    setValue(select);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Dropdown items={items} selectedValue={selectedValue} onChange={onChange}/>
     </div>
   );
 }
